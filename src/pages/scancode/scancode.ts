@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,Platform} from 'ionic-angular';
 import {Native} from "../../providers/Native";
 import {WalletManager} from '../../providers/WalletManager'
 import { Config } from '../../providers/Config';
@@ -14,7 +14,9 @@ export class ScancodePage {
   public toAddress:string="";
   public fee:any;
   public amount:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public native: Native,public walletManager: WalletManager) {
+  public iwidth:string=null;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public native: Native,public walletManager: WalletManager,public plt:Platform) {
+           this.iwidth = (this.plt.width()-10).toString();
            let params = this.navParams.data;
            this.fee = params["tx"]["fee"];
           let  txObj  = params["tx"]["raw"];

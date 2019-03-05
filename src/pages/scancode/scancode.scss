@@ -2,4 +2,14 @@ page-scancode {
     .bottom-border {
         border-bottom: 1px solid #ddd;
     }
+    .receive-qrocde {
+        margin: 0px auto;
+        display: block;
+        padding-top: 20px;
+        text-align: center;
+        img {
+            //不好用
+            margin: 0px auto;
+        }
+    }
 }
